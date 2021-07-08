@@ -3,12 +3,15 @@ const Engineer= require('./lib/engineer');
 const Manager= require('./lib/manager');
 const Intern= require('./lib/intern');
 
-const inqurier= require('inquirer');
+const inquirer= require('inquirer');
 const fs= require('fs');
-const inquirer = require('inquirer');
+
+const managers= [];
+const engineers= [];
+const interns= [];
 
 const addTeamMember= () => {
-    inqurier
+    inquirer
         .prompt([
             {
                 type: 'confirm',
@@ -25,13 +28,15 @@ const addTeamMember= () => {
                 module.exports= managers;
                 module.exports= engineers;
                 module.exports= interns;
+                console.log("HTML has been updated!")
                 return answers;
             }
         });
 };
 
+
 const firstquestion= () => {
-    inqurier
+    inquirer
         .prompt ([
             {
                 type:'list',
@@ -52,6 +57,9 @@ const firstquestion= () => {
             }
         });
 };
+firstquestion();
+
+
 
 const managerQuestions= () => {
     inquirer
@@ -86,8 +94,10 @@ const managerQuestions= () => {
             );
             managers.push(newManager);
             addTeamMember();
-        });
+        })
 };
+
+
 
 const engineerQuestions= () => {
     inquirer
@@ -124,3 +134,41 @@ const engineerQuestions= () => {
             addTeamMember();
         });
 };
+
+const internQuestions= () => {
+    inquirer
+        .prompt ([
+            {
+                type: 'input',
+                name: 'name',
+                message: 'What is your name?',
+            },
+            {
+                type: 'input',
+                name: 'id',
+                message: 'What is your ID number?',
+            },
+            {
+                type: 'input',
+                name: 'email',
+                message: 'What is your Email?',
+            },
+            {
+                type: 'input',
+                name: 'school',
+                message: 'What school do you attend?',
+            },
+        ])
+        .then ((answers) => {
+            const newIntern= new Intern(
+                answers.name,
+                answers.id,
+                answers.email,
+                answers.school,
+            );
+            interns.push(newIntern);
+            addTeamMember();
+        });
+};
+
+

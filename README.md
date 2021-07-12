@@ -49,11 +49,11 @@ Run 'npm run test' to test using jest.
 
 ## Screenshot
 
-
+![teamgenerator](https://user-images.githubusercontent.com/82292712/125237009-9a8a3a80-e2aa-11eb-9412-7842c1f47d83.png)
 
 ## Video
 
-
+https://drive.google.com/file/d/14Q9TgxGWsLGQE2hgZcS242uOWZM0u16g/view
     
 ## Contact
     

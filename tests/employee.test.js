@@ -26,7 +26,7 @@ describe("Employee", () => {
     })
 
     describe("Email", () => {
-        it("should return employee email", () => {
+        it("should return employee email in a string", () => {
             const obj= new Employee("Max", 1, "max@email.com");
             
             expect(obj.email).toEqual("max@email.com");
@@ -34,7 +34,7 @@ describe("Employee", () => {
     })
     
     describe("getRole", () => {
-        it("should return employee email", () => {
+        it("should return role using getRole", () => {
             const obj= new Employee("Max", 1, "max@email.com");
             const role= "Employee";
             
